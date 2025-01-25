@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>SmartPrint System</title>
+  <!-- Navbar -->
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="margin-left: 20px;">
+        <img src="favicon.ico" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        <span style="margin-left: 10px; color: aliceblue;">@</span>
+        <span id="client-name" style="font-family: cursive;color: rgb(255, 255, 255);margin-left: 1px;">Client </span>
+        <span style="color: aliceblue; margin-left: 10px;" >    - </span>
+        <span id="Mobile_No" style="font-family: cursive;color: rgb(255, 255, 255);margin-left: 10px;">Mobile_No</span>
+      </a>
+    </div>
+  </nav>
+
+  <script>
+    // Retrieve the stored username from localStorage and update the navbar
+    window.onload = function() {
+      const username = localStorage.getItem('username');
+      const Mobile_No = localStorage.getItem('Mobile_No');
+      if (username, Mobile_No) {
+        document.getElementById('client-name').textContent = username;
+        document.getElementById('Mobile_No').textContent = Mobile_No;
+      } else {
+        document.getElementById('client-name').textContent = "Client";
+        document.getElementById('Mobile_No').textContent = "Mobile_No";
+      }
+    };
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Favicon -->
+  <link rel="icon" href="/Login/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <header>
+      <h1>Upload Your Documents for Printing</h1>
+    </header>
+    
+    <div class="upload-section">
+      <!-- Upload Form -->
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileUpload" name="fileUpload" multiple onchange="previewFiles()">
+        <button type="button" id="uploadButton" style="display: none;">Upload Files</button>
+      </form>
+    
+      <!-- Preview Section -->
+      <div class="file-preview-container">
+        <h3>Files to be Uploaded</h3>
+        <div id="fileList" class="file-list"></div>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Powered by SmartPrint System</p>
+    </footer>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+
+  <!-- Firebase Configuration & Functions -->
+  <script src="firebase.js"></script>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

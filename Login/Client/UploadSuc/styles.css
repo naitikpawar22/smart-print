@@ -1,0 +1,32 @@
+/* Styling for the body to center content */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    flex-direction: column;
+  }
+  
+  /* Styling for the video container */
+  .video-container {
+    text-align: center;
+  }
+  
+  /* Styling for the video */
+  video {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1000px; /* Limit the maximum size */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px;
+  }
+  
+  /* Styling for the text below the video */
+  .video-container p {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
